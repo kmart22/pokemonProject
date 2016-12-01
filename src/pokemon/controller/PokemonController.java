@@ -2,18 +2,18 @@ package pokemon.controller;
 
 import pokemon.model.Pokemon;
 import pokemon.view.PokemonFrame;
+import pokemon.view.PokemonPanel;
 
 public class PokemonController
 {
-	//private pokemon;
-//	
-//	private pokemonFrame pokemonFrame;
-//	
-//	public pokemonController()
-//	{
-//		//pokemon = new Pokemon("");
-//		pokemonFrame = new PokemonFrame(this);
-//	}
+	private Pokemon pokemon;
+	private PokemonFrame appFrame;
+	
+	public PokemonController()
+	{
+		pokemon = new Pokemon();
+		appFrame = new PokemonFrame(this);
+	}
 	public void start()
 	{
 		
