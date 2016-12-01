@@ -9,7 +9,8 @@ import pokemon.controller.PokemonController;
 
 public class PokemonPanel extends JPanel
 {
-	private PokemonController baController;
+	private PokemonController baseController;
+	private ImageIcon pokemonIcon;
 	private SpringLayout baseLayout;
 	private JButton updateButton;
 	private JComboBox pokedexSelector;
@@ -32,7 +33,8 @@ public class PokemonPanel extends JPanel
 		super();
 		this.baseController = baseController;
 		this.baseLayout = new SpringLayout();
-		this.updateButton = new JButton("Update!");
+		this.pokemonIcon = new ImageIcon("images/pokeball.png");
+		this.updateButton = new JButton("Update the stats!");
 		this.pokedexSelector = new JComboBox(new String [] {"Sylveon", "Jigglypuff", "Charmander", "Magcargo", "GeoDude"});
 		this.pokemonLabel = new JLabel("pokemonLabel");
 		this.healthLabel = new JLabel("Health");
@@ -47,7 +49,7 @@ public class PokemonPanel extends JPanel
 		this.nameField = new JTextField("nameField");		
 		this.numberField = new JTextField("numberField");		
 		this.advancedArea = new JTextArea("advancedArea");
-		
+
 		
 		setupPanel();
 		setupLayout();
@@ -105,8 +107,9 @@ public class PokemonPanel extends JPanel
 		baseLayout.putConstraint(SpringLayout.SOUTH, nameField, -19, SpringLayout.NORTH, numberField);
 		baseLayout.putConstraint(SpringLayout.NORTH, healthField, 23, SpringLayout.SOUTH, numberField);
 		baseLayout.putConstraint(SpringLayout.WEST, numberField, 0, SpringLayout.WEST, nameField);
-		baseLayout.putConstraint(SpringLayout.NORTH, advancedArea, 6, SpringLayout.SOUTH, advancedLabel);
-		baseLayout.putConstraint(SpringLayout.WEST, advancedArea, 0, SpringLayout.WEST, healthLabel);
+		baseLayout.putConstraint(SpringLayout.NORTH, advancedArea, 0, SpringLayout.NORTH, advancedLabel);
+		baseLayout.putConstraint(SpringLayout.WEST, advancedArea, 0, SpringLayout.WEST, healthField);
+		
 	}
 	
 	private void setupListeners()
