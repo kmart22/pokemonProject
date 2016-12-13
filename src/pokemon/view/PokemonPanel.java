@@ -200,5 +200,24 @@ public class PokemonPanel extends JPanel
 		String path = "/pokemon/view/images/";
 		String defaultName = "pokeball";
 		String extension = ".png";
+		try
+		{
+			pokemonIcon = new ImageIcon(getClass().getResource(path + name + extension));
+		}
+		catch (NullPointerException missingFile)
+		{
+			pokemonIcon = new ImageIcon(getClass().getResource(path + name + extension));
+		}
+		pokemonLabel.setIcon(pokemonIcon);
+		repaint();
 	}
+	private void setRandomColor()
+	{
+		int red = (int) (Math.random() *256);
+		int green = (int) (Math.random() * 256);
+		int blue = (int) (Math.random() * 256);
+		
+		this.setBackground(new Color(red, green, blue));
+	}
+	
 }
