@@ -3,8 +3,7 @@ package pokemon.view;
 import java.awt.Color;
 import java.awt.Dimension;
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener; 
+import java.awt.event.*;
 import pokemon.controller.PokemonController;
 
 public class PokemonPanel extends JPanel
@@ -78,7 +77,6 @@ public class PokemonPanel extends JPanel
 		this.add(numberLabel);
 		this.add(advancedLabel);
 		this.add(advancedArea);
-		//this.add();
 	}
 	
 	private void setupLayout()
@@ -114,6 +112,93 @@ public class PokemonPanel extends JPanel
 	
 	private void setupListeners()
 	{
+		updateButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent selection)
+			{
+				int selected = pokedexSelector.getSelectedIndex();
+				System.out.println(baseController.getPokedex().get(selected));
+				nameField.setText(baseController.getPokedex().get(selected).getName());
+				numberField.setText(baseController.getPokedex().get(selected).getNumber() + "");
+				combatField.setText(baseController.getPokedex().get(selected).getAttackPoints() + "");
+				speedField.setText(baseController.getPokedex().get(selected).getSpeed() + "");
+				healthField.setText(baseController.getPokedex().get(selected).getHealthPoints() + "");
+				advancedArea.setText(baseController.getPokedex().get(selected).getPokemonInformation() + "\n" + baseController.getPokedex().get(selected).getPokemonTypes());
+				
+				changeColorBasedOnType(baseController.getPokedex().get(selected).getPokemonTypes());
+				changeImageDisplay(baseController.getPokedex().get(selected).getClass().getSimpleName());
+			}
+		});
 		
+		this.addMouseListener(new MouseListener()
+				{
+						public void mouseEntered(MouseEvent entered)
+						{
+							//System.out.println("mouse in!")
+						}
+						
+						public void mouseExited(MouseEvent exited)
+						{
+							//System.out.println("mouse out!")
+						}
+						
+						public void mousePressed(MouseEvent pressed)
+						{
+							//System.out.println("mouse pressed!")
+						}
+						
+						public void mouseClicked(MouseEvent clicked)
+						{
+							System.out.println("Mouse released!");
+						}
+						
+						public void mouseReleased(MouseEvent released)
+						{
+							System.out.println("Mouse clicked!");
+						}
+				});
+		
+		this.addMouseMotionListener(new MouseMotionListener()
+		{
+			public void mouseMoved(MouseEvent moved)
+			{
+				System.out.println(moved.getX() + "," + moved.getY());
+				if (moved.getX() <= 5 && moved.getY() <= 5)
+				{
+					System.out.println("You found the secret point!");
+				}
+			}
+			
+			public void mouseDragged(MouseEvent dragged)
+			{
+				setRandomColor();
+			}
+					
+		});
+	}
+	
+	private void changeColorBasedOnType(String type)
+	{
+		if (type.contains("Fairy"))
+		{
+			this.setBackground(Color.PINK);
+		}
+		
+		if (type.contains("Rock"))
+		{
+			this.setBackground(Color.GRAY);
+		}
+		
+		if (type.contains("Fire"))
+		{
+			this.setBackground(Color.RED);
+		}
+	}
+	
+	private void changeImageDisplay(String name)
+	{
+		String path = "/pokemon/view/images/";
+		String defaultName = "pokeball";
+		String extension = ".png";
 	}
 }

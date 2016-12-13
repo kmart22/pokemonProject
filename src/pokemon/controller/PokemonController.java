@@ -4,23 +4,26 @@ import pokemon.model.*;
 import pokemon.view.PokemonFrame;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import pokemon.view.PokemonPanel;
 
 public class PokemonController
 {
 	private ArrayList<Pokemon> pokedex;
 	private PokemonFrame baseFrame;
+	private PokemonPanel appPanel;
 	
 	
 	public PokemonController()
 	{
 		pokedex = new ArrayList<Pokemon>();
-		buildPokedex();
+		
 		
 		baseFrame = new PokemonFrame(this);
 	}
 	public void start()
 	{
-		JOptionPane.showMessageDialog(baseFrame,  "Welcometo Pokemon Inheritance");
+		buildPokedex();
+		JOptionPane.showMessageDialog(baseFrame,  "Welcome to Pokemon Inheritance");
 	}
 	
 	private void buildPokedex()
