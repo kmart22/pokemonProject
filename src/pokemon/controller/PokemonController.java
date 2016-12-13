@@ -9,26 +9,29 @@ import pokemon.view.PokemonPanel;
 public class PokemonController
 {
 	private ArrayList<Pokemon> pokedex;
-	private PokemonFrame baseFrame;
+	private PokemonFrame pokemonFrame;
 	private PokemonPanel appPanel;
 	
 	
 	public PokemonController()
 	{
 		pokedex = new ArrayList<Pokemon>();
-		
-		
-		baseFrame = new PokemonFrame(this);
+		buildPokedex();
+		pokemonFrame = new PokemonFrame(this);
 	}
 	public void start()
 	{
-		buildPokedex();
-		JOptionPane.showMessageDialog(baseFrame,  "Welcome to Pokemon Inheritance");
+		JOptionPane.showMessageDialog(pokemonFrame,  "Welcome to Pokemon Inheritance");
 	}
 	
 	private void buildPokedex()
 	{
-		
+		pokedex.add(new Geodude("rock-man-thing"));
+		pokedex.add(new Vulpix("Fire Squirell"));
+		pokedex.add(new Shyguy("ghost From Mario?"));
+		pokedex.add(new Magcargo("Fire Snail"));
+		pokedex.add(new Jigglypuff("Jiggle-fairy"));
+		pokedex.add(new Geodude("another stupid rock guy?!?!"));
 	}
 	
 	public String[] buildPokedexText()
@@ -58,7 +61,7 @@ public class PokemonController
 	
 	public PokemonFrame getBaseFrame()
 	{
-		return baseFrame;
+		return pokemonFrame;
 	}
 	
 }

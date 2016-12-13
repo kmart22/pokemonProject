@@ -11,7 +11,8 @@ public class Pokemon
 	
 	public Pokemon(String name, int number)
 	{
-		
+		this.name = name;
+		this.number = number;
 	}
 	
 	public String getPokemonTypes()
@@ -49,7 +50,53 @@ public class Pokemon
 	
 	public int getHealthPoints()
 	{
-		
+		return healthPoints;
 	}
+	
+	public void setHealtPoints(int healthPoints)
+	{
+		this.healthPoints = healthPoints;
+	}
+
+	public int getAttackPoints() 
+	{
+		return attackPoints;
+	}
+
+	public void setAttackPoints(int attackPoints) 
+	{
+		this.attackPoints = attackPoints;
+	}
+
+	public double getSpeed()
+	{
+		return speed;
+	}
+
+	public void setSpeed(double speed) 
+	{
+		this.speed = speed;
+	}
+
+	public int getNumber()
+	{
+		return number;
+	}
+
+	public void setNumber(int number) 
+	{
+		this.number = number;
+	}
+
+	public String getName() 
+	{
+		return name;
+	}
+
+	public void setName(String name) 
+	{
+		this.name = name;
+	}
+	
 	
 }
