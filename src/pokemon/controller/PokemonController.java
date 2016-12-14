@@ -26,12 +26,12 @@ public class PokemonController
 	
 	private void buildPokedex()
 	{
-		pokedex.add(new Geodude("rock-man-thing"));
-		pokedex.add(new Vulpix("Fire Squirell"));
-		pokedex.add(new Shyguy("ghost From Mario?"));
+		pokedex.add(new Geodude("Geodude"));
+		pokedex.add(new Charmander("Fire lizard?"));
+		pokedex.add(new Jigglypuff("JigglyPuff"));
 		pokedex.add(new Magcargo("Fire Snail"));
-		pokedex.add(new Jigglypuff("Jiggle-fairy"));
-		pokedex.add(new Geodude("another stupid rock guy?!?!"));
+		pokedex.add(new Sylveon("Sylveon"));
+		//pokedex.add(new Geodude("another stupid rock guy?!?!"));
 	}
 	
 	public String[] buildPokedexText()
@@ -51,7 +51,7 @@ public class PokemonController
 		current.setName(name);
 		current.setAttackPoints(combat);
 		current.setSpeed(speed);
-		current.setHealthpoints(health);
+		current.setHealtPoints(health);
 	}
 	
 	public ArrayList<Pokemon> getPokedex()

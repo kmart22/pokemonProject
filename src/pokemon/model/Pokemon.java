@@ -18,28 +18,28 @@ public class Pokemon
 	public String getPokemonTypes()
 	{
 		String pokemontypes = "This Pokemon has the following types:\n";
-		Class<?> [] types = getClass().getInterface();
-		String [] pokeTypes = new String[types.length];
+		Class<?> [] types = getClass().getInterfaces();
+		String [] pokemonTypes = new String[types.length];
 		for(int index = 0; index < types.length; index++)
 		{
 			String temp = types[index].getCanonicalName();
 			
-			pokeTypes[index] = temp;
+			pokemonTypes[index] = temp;
 		}
 		
-		for(String current : pokeTypes)
+		for(String current: pokeTypes)
 		{
 			String temp = current.replace(this.getClass().getPackage().getName() + ".", "");
-			pokemonTypes += temp + "\n";
+			pokemonTypes += temp += "\n";
 		}
 		
 		return pokemonTypes;
 	}
 	
-	public String toString()
-	{
-		
-	}
+//	public String toString()
+//	{
+//		
+//	}
 	
 	public String getPokemonInformation()
 	{

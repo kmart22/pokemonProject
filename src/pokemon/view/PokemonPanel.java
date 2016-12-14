@@ -220,4 +220,23 @@ public class PokemonPanel extends JPanel
 		this.setBackground(new Color(red, green, blue));
 	}
 	
+	private boolean isValidDouble(String input)
+	{
+		boolean isDouble = false;
+		if (input.length() != 0)
+		{
+			isDouble = true;
+		}
+		return isDouble;
+	}
+	
+	private boolean isValidInteger(String input)
+	{
+		return true;
+	}
+	
+	private boolean isValidName(String name)
+	{
+		return true;
+	}
 }
