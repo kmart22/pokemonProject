@@ -6,7 +6,7 @@ public class Charmander extends Pokemon implements Fire
 	{
 		super("Charmander", 4);
 		this.setAttackPoints(52);
-		this.setHealthPoints(39);
+		this.setHealtPoints(39);
 		this.setSpeed(65.0);
 	}
 	
@@ -14,7 +14,7 @@ public class Charmander extends Pokemon implements Fire
 	{
 		super("Charmander", 4);
 		this.setAttackPoints(52);
-		this.setHealthPoints(39);
+		this.setHealtPoints(39);
 		this.setSpeed(65.0);
 	}
 	

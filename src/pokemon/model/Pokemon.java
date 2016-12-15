@@ -1,6 +1,6 @@
 package pokemon.model;
 
-public class Pokemon
+public abstract class Pokemon
 {
 	private int healthPoints;
 	private int attackPoints;
@@ -17,14 +17,14 @@ public class Pokemon
 	
 	public String getPokemonTypes()
 	{
-		String pokemontypes = "This Pokemon has the following types:\n";
+		String pokemonTypes = "This Pokemon has the following types:\n";
 		Class<?> [] types = getClass().getInterfaces();
-		String [] pokemonTypes = new String[types.length];
+		String [] pokeTypes = new String[types.length];
 		for(int index = 0; index < types.length; index++)
 		{
 			String temp = types[index].getCanonicalName();
 			
-			pokemonTypes[index] = temp;
+			pokeTypes[index] = temp;
 		}
 		
 		for(String current: pokeTypes)

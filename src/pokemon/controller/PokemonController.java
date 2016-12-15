@@ -5,6 +5,8 @@ import pokemon.view.PokemonFrame;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import pokemon.view.PokemonPanel;
+import java.util.Map;
+import java.util.HashMap;
 
 public class PokemonController
 {

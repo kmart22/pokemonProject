@@ -2,6 +2,6 @@ package pokemon.model;
 
 public interface Fire 
 {
-	public int FireBreath();
+	public int fireBreath();
 	public int blazeKick();
 }

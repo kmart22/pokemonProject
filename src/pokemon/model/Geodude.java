@@ -1,12 +1,13 @@
 package pokemon.model;
 
+
 public class Geodude extends Pokemon implements Rock
 {
 	public Geodude()
 	{
 		super("Geodude", 74);
 		this.setAttackPoints(80);
-		this.setHealthPoints(40);
+		this.setHealtPoints(40);
 		this.setSpeed(20.0);
 	}
 	
@@ -14,7 +15,7 @@ public class Geodude extends Pokemon implements Rock
 	{
 		super(name, 74);
 		this.setAttackPoints(80);
-		this.setHealthPoints(40);
+		this.setHealtPoints(40);
 		this.setSpeed(20.0);
 	}
 	

@@ -4,27 +4,27 @@ public class Jigglypuff extends Pokemon implements Fairy
 {
 	public Jigglypuff()
 	{
-		super("Jigglypuff", );
-		this.setAttackPoints();
-		this.setHealthPoints();
-		this.setSpeed();
+		super("Jigglypuff", 39);
+		this.setAttackPoints(45);
+		this.setHealtPoints(115);
+		this.setSpeed(20);
 	}
 	
 	public Jigglypuff(String name)
 	{
-		super("Jigglypuff", );
-		this.setAttackPoints();
-		this.setHealthPoints();
-		this.setSpeed();
+		super("Jigglypuff", 39);
+		this.setAttackPoints(45);
+		this.setHealtPoints(115);
+		this.setSpeed(20);
 	}
 	
 	public int charm()
 	{
-		return ;
+		return 20;
 	}
 	
 	public int heal()
 	{
-		return ;
+		return 10;
 	}
 }
