@@ -34,7 +34,7 @@ public class PokemonPanel extends JPanel
 		this.baseLayout = new SpringLayout();
 		this.pokemonIcon = new ImageIcon("images/pokeball.png");
 		this.updateButton = new JButton("Update the stats!");
-		this.pokedexSelector = new JComboBox(new String [] {"Sylveon", "Jigglypuff", "Charmander", "Magcargo", "GeoDude"});
+		this.pokedexSelector = new JComboBox(new String [] {"Geodude", "Charmander", "Jigglypuff", "Magcargo", "Sylveon"});
 		this.pokemonLabel = new JLabel("pokemonLabel");
 		this.healthLabel = new JLabel("Health");
 		this.combatLabel = new JLabel("combat");
@@ -48,6 +48,7 @@ public class PokemonPanel extends JPanel
 		this.nameField = new JTextField("nameField");		
 		this.numberField = new JTextField("numberField");		
 		this.advancedArea = new JTextArea("advancedArea");
+		
 
 		
 		setupPanel();
@@ -77,6 +78,7 @@ public class PokemonPanel extends JPanel
 		this.add(numberLabel);
 		this.add(advancedLabel);
 		this.add(advancedArea);
+		this.add(updateButton);
 	}
 	
 	private void setupLayout()
@@ -91,8 +93,6 @@ public class PokemonPanel extends JPanel
 		baseLayout.putConstraint(SpringLayout.SOUTH, nameLabel, -31, SpringLayout.NORTH, numberLabel);
 		baseLayout.putConstraint(SpringLayout.WEST, combatLabel, 0, SpringLayout.WEST, numberLabel);
 		baseLayout.putConstraint(SpringLayout.EAST, numberLabel, 0, SpringLayout.EAST, nameLabel);
-		baseLayout.putConstraint(SpringLayout.NORTH, advancedLabel, 45, SpringLayout.SOUTH, speedLabel);
-		baseLayout.putConstraint(SpringLayout.EAST, advancedLabel, 0, SpringLayout.EAST, combatLabel);
 		baseLayout.putConstraint(SpringLayout.WEST, healthField, 13, SpringLayout.EAST, healthLabel);
 		baseLayout.putConstraint(SpringLayout.NORTH, healthLabel, 6, SpringLayout.NORTH, healthField);
 		baseLayout.putConstraint(SpringLayout.NORTH, combatField, -6, SpringLayout.NORTH, combatLabel);
@@ -105,9 +105,14 @@ public class PokemonPanel extends JPanel
 		baseLayout.putConstraint(SpringLayout.SOUTH, nameField, -19, SpringLayout.NORTH, numberField);
 		baseLayout.putConstraint(SpringLayout.NORTH, healthField, 23, SpringLayout.SOUTH, numberField);
 		baseLayout.putConstraint(SpringLayout.WEST, numberField, 0, SpringLayout.WEST, nameField);
-		baseLayout.putConstraint(SpringLayout.NORTH, advancedArea, 0, SpringLayout.NORTH, advancedLabel);
+		baseLayout.putConstraint(SpringLayout.WEST, updateButton, 34, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.NORTH, updateButton, 6, SpringLayout.SOUTH, pokedexSelector);
+		baseLayout.putConstraint(SpringLayout.NORTH, advancedLabel, 26, SpringLayout.SOUTH, speedLabel);
+		baseLayout.putConstraint(SpringLayout.EAST, advancedLabel, -10, SpringLayout.WEST, advancedArea);
+		baseLayout.putConstraint(SpringLayout.EAST, advancedArea, 170, SpringLayout.WEST, healthField);
 		baseLayout.putConstraint(SpringLayout.WEST, advancedArea, 0, SpringLayout.WEST, healthField);
-		
+		baseLayout.putConstraint(SpringLayout.SOUTH, advancedArea, 124, SpringLayout.SOUTH, speedField);
+		baseLayout.putConstraint(SpringLayout.NORTH, advancedArea, 21, SpringLayout.SOUTH, speedField);
 	}
 	
 	private void setupListeners()
@@ -123,8 +128,7 @@ public class PokemonPanel extends JPanel
 				combatField.setText(baseController.getPokedex().get(selected).getAttackPoints() + "");
 				speedField.setText(baseController.getPokedex().get(selected).getSpeed() + "");
 				healthField.setText(baseController.getPokedex().get(selected).getHealthPoints() + "");
-				advancedArea.setText(baseController.getPokedex().get(selected).getPokemonInformation() + "\n" + baseController.getPokedex().get(selected).getPokemonTypes());
-				
+				advancedArea.setText(baseController.getPokedex().get(selected).getPokemonInformation() + "\n" + baseController.getPokedex().get(selected).getPokemonTypes());			
 				changeColorBasedOnType(baseController.getPokedex().get(selected).getPokemonTypes());
 				changeImageDisplay(baseController.getPokedex().get(selected).getClass().getSimpleName());
 			}
@@ -158,23 +162,23 @@ public class PokemonPanel extends JPanel
 						}
 				});
 		
-		this.addMouseMotionListener(new MouseMotionListener()
-		{
-			public void mouseMoved(MouseEvent moved)
-			{
-				System.out.println(moved.getX() + "," + moved.getY());
-				if (moved.getX() <= 5 && moved.getY() <= 5)
-				{
-					System.out.println("You found the secret point!");
-				}
-			}
-			
-			public void mouseDragged(MouseEvent dragged)
-			{
-				setRandomColor();
-			}
-					
-		});
+//		this.addMouseMotionListener(new MouseMotionListener()
+//		{
+//			public void mouseMoved(MouseEvent moved)
+//			{
+//				System.out.println(moved.getX() + "," + moved.getY());
+//				if (moved.getX() <= 5 && moved.getY() <= 5)
+//				{
+//					System.out.println("You found the secret point!");
+//				}
+//			}
+//			
+//			public void mouseDragged(MouseEvent dragged)
+//			{
+//				setRandomColor();
+//			}
+//					
+//		});
 	}
 	
 	private void changeColorBasedOnType(String type)
@@ -220,4 +224,24 @@ public class PokemonPanel extends JPanel
 		this.setBackground(new Color(red, green, blue));
 	}
 	
+	private boolean isValidDouble(String input)
+	{
+		boolean isDouble = false;
+		if (input.length() != 0)
+		{
+			isDouble = true;
+		}
+		return isDouble;
+	}
+	
+	private boolean isValidInteger(String input)
+	{
+		return true;
+	}
+	
+	private boolean isValidName(String name)
+	{
+		return true;
+	}
 }
+//kaden martinsen
