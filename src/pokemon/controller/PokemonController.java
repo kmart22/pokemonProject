@@ -23,7 +23,7 @@ public class PokemonController
 	}
 	public void start()
 	{
-		JOptionPane.showMessageDialog(pokemonFrame,  "Welcome to Pokemon Inheritance");
+		JOptionPane.showMessageDialog(pokemonFrame,  "Welcome to Pokedex app!!!");
 	}
 	
 	private void buildPokedex()
