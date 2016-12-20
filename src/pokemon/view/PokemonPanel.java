@@ -8,6 +8,7 @@ import pokemon.controller.PokemonController;
 
 public class PokemonPanel extends JPanel
 {
+	private String pokemon;
 	private PokemonController baseController;
 	private ImageIcon pokemonIcon;
 	private SpringLayout baseLayout;
@@ -36,6 +37,7 @@ public class PokemonPanel extends JPanel
 		this.updateButton = new JButton("Update the stats!");
 		this.pokedexSelector = new JComboBox(new String [] {"Geodude", "Charmander", "Jigglypuff", "Magcargo", "Sylveon"});
 		this.pokemonLabel = new JLabel("pokemonLabel");
+		this.pokemonLabel = new JLabel(null, pokemonIcon, SwingConstants.CENTER);
 		this.healthLabel = new JLabel("Health");
 		this.combatLabel = new JLabel("combat");
 		this.speedLabel = new JLabel("speed");
@@ -79,6 +81,7 @@ public class PokemonPanel extends JPanel
 		this.add(advancedLabel);
 		this.add(advancedArea);
 		this.add(updateButton);
+		this.add(pokemonLabel);
 	}
 	
 	private void setupLayout()
@@ -244,4 +247,4 @@ public class PokemonPanel extends JPanel
 		return true;
 	}
 }
-//kaden martinsen
+//kaden martinsen is cool

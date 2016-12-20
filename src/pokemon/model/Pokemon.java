@@ -43,7 +43,7 @@ public abstract class Pokemon
 	
 	public String getPokemonInformation()
 	{
-		String pokemonInfo = "This pokeon is of type: " + this.getClass().getSimpleName();
+		String pokemonInfo = "This pokeon is of the name: " + this.getClass().getSimpleName();
 		
 		return pokemonInfo;
 	}
